@@ -1,0 +1,30 @@
+.Modal {
+  height: 80%;
+  width: 80%;
+  position: fixed;
+  z-index: 200;
+  border-radius: 1rem;
+  left: 10%;
+  top: 10%;
+  transition: all 0.3s ease-in;
+  background: #252729;
+}
+@media only screen and (max-width: 761px) {
+  .Modal {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 30000;
+  }
+}
+.Modal__show {
+  transform: translateY(0);
+  z-Index: 500;
+  opacity: 1;
+}
+.Modal__remove {
+  transform: translateY(100%);
+  z-Index: -1;
+  opacity: 0;
+}/*# sourceMappingURL=Modal.module.css.map */

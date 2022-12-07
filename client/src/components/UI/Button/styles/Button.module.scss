@@ -1,0 +1,25 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+
+.Button {
+    @include heightWidth(auto);
+    background: $card-button;
+    border: none;
+    color: $primaryWhite;
+    outline: none;
+    cursor: pointer;
+    border-radius: .3em;
+    transition: opacity .8s ease-in-out;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.Success {
+    color: $primarySuccess;
+}
+
+.Danger {
+    color: $primaryDanger;
+}

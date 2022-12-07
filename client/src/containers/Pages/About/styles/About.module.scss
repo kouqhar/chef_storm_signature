@@ -1,0 +1,23 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+@import '../../../../styles/partials/mediaQueries';
+
+.About{
+    @include heightWidth(auto);
+    @include paddingMargin(2rem 0);
+    background: $secondaryBlur;
+    min-height: 50vh;
+    color: $primaryWhite;
+    .content{
+        @include heightWidth(auto, 80%);
+        @include paddingMargin(0, 0 auto);
+        @include centeredGrid();
+        text-align: justify;
+        p{
+            line-height: 1.7rem;
+        }
+        @include responsive(medium-screens){
+            @include heightWidth(auto, 90%);
+        }
+    }
+}

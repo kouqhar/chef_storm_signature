@@ -1,0 +1,36 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+@import '../../../../styles/partials/keyframes';
+@import '../../../../styles/partials/mediaQueries';
+
+.Footer_Container{
+    @include centeredGrid();
+    @include heightWidth(10vh);
+    background: rgba($color: $primaryBlack, $alpha: .2);
+    color: $primaryWhite;
+    @include responsive(xxx-wide-screens){
+        @include heightWidth(auto);
+        padding: 2rem 0;
+        font-size: 2rem;
+    }
+    .content{
+        @include heightWidth();
+        @include centeredGrid();
+        p{
+            @include font-weight(medium);
+            text-align: center;
+            letter-spacing: .1em;   
+            @include responsive(fold-screens){
+                @include heightWidth(auto, 90%);
+                text-align: left;
+                font-size: .9em;
+            }
+            @include responsive(xxx-wide-screens){
+                line-height: 3rem;
+            }
+            abbr{
+                color: invert($color: $card-button);
+            }
+        }
+    }
+}

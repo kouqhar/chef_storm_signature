@@ -1,0 +1,22 @@
+.Button {
+  height: auto;
+  width: 100%;
+  background: #97281B;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.3em;
+  transition: opacity 0.8s ease-in-out;
+}
+.Button:hover {
+  opacity: 0.8;
+}
+
+.Success {
+  color: #3a5514;
+}
+
+.Danger {
+  color: #944317;
+}/*# sourceMappingURL=Button.module.css.map */

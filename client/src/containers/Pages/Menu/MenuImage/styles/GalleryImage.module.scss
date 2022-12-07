@@ -1,0 +1,72 @@
+@import '../../../../../styles/partials/colors';
+@import '../../../../../styles/partials/mixin';
+@import '../../../../../styles/partials/mediaQueries';
+@import '../../../../../styles/partials/support';
+
+.Card {
+    @include paddingMargin(.5rem);
+    @include heightWidth(300px, 370px);
+    background: rgba($color: $primaryBlur, $alpha: 1);
+    color: $primaryWhite;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .5s ease-out;
+
+    @include responsive(medium-screens) {
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    @include responsive(fold-screens) {
+        @include paddingMargin(.2rem .6rem, .4rem auto);
+        font-size: .9em;
+        margin-right: unset;
+    }
+
+    img {
+        @include heightWidth(75%);
+        margin: .2rem auto;
+        border-radius: 15px;
+
+        @include responsive(xxx-wide-screens) {
+            @include heightWidth(80%);
+        }
+
+        @include responsive(fold-screens) {
+            @include heightWidth(80%);
+        }
+    }
+
+    &__details {
+        @include heightWidth(auto);
+        @include paddingMargin(.5rem 1rem, 0 auto);
+        background: rgba($color: invert($primaryBlur), $alpha: .1);
+        border-radius: 10px;
+        text-align: justify;
+
+        p {
+            text-transform: uppercase;
+            line-height: 1.5rem;
+            font-size: 1em;
+            font-family: sans-serif;
+
+            span {
+                font-size: large;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 1px 1px 5px 3px $card-button;
+    }
+
+    &:hover {
+        transform: translateY(-3%);
+
+        @include responsive(medium-screens) {
+            transform: translateY(0);
+        }
+    }
+}

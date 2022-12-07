@@ -1,0 +1,84 @@
+@import '../../../styles/partials/mixin';
+@import '../../../styles/partials/colors';
+@import '../../../styles/partials/mediaQueries';
+
+.MealPopUp {
+    @include displayFlex();
+    @include heightWidth();
+
+    @include responsive(medium-screens) {
+        flex-direction: column;
+    }
+
+    .popUpImage {
+        @include heightWidth();
+
+        img {
+            @include heightWidth();
+            content: attr(data-image);
+            border-radius: 1rem 0 0 1rem;
+
+        }
+
+        @include responsive(medium-screens) {
+            @include heightWidth(auto, auto);
+
+            img {
+                border-radius: unset;
+            }
+        }
+    }
+
+    .mealInformation {
+        @include heightWidth(auto, 50%);
+        @include displayFlex(space-around, center);
+        @include paddingMargin(0 2rem, 0 auto);
+        flex-direction: column;
+        position: relative;
+        background: $secondaryBlur;
+
+        &::before {
+            content: '';
+            position: absolute;
+            @include heightWidth(100%, 2rem);
+            background: inherit;
+            top: 0;
+            left: 0;
+            border-radius: 3rem;
+            transform: translateX(-1rem);
+        }
+
+        @include responsive(medium-screens) {
+            @include heightWidth(100%);
+
+            &::before {
+                @include heightWidth(2rem, 100%);
+                transform: translate(0, -1rem);
+            }
+        }
+
+        .mealDetails {
+            @include heightWidth(30%, auto);
+            @include centeredGrid();
+            font-size: 1.5em;
+            font-weight: bolder;
+
+            @include responsive(medium-screens) {
+                font-size: 1.7em;
+            }
+        }
+
+        .btn {
+            @include paddingMargin(1rem, 0 auto);
+            font-weight: bolder;
+            font-size: 1.2rem;
+            letter-spacing: 1rem;
+            transition: transform .3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+}

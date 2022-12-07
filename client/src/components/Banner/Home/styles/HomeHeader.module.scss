@@ -1,0 +1,132 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+@import '../../../../styles/partials/mediaQueries';
+@import '../../../../styles/partials/support';
+
+.header {
+    @include centeredGrid();
+    @include heightWidth(80vh);
+    position: relative;
+    color: $primaryWhite;
+
+    background: {
+        image: url("../../../../assets/images/chef/image1.png");
+        color: linear-gradient(90deg, $primaryBlack 40%, $primaryWhite 20%, $primaryGrey 20%, $card-button 20%);
+        repeat: no-repeat;
+        attachment: fixed;
+        size: cover;
+        position: 100% 40%;
+    }
+
+    @include responsive(xxx-wide-screens) {
+        @include heightWidth(90vh);
+        font-size: 1.5rem;
+    }
+
+    @include responsive(medium-screens) {
+        @include heightWidth(100vh);
+    }
+
+    &_text {
+        @include paddingMargin(2em);
+        @include heightWidth(auto, 90%);
+        max-height: 80%;
+        display: grid;
+        border-radius: .6em;
+        place-items: center;
+        background: rgba($color: $primaryBlack, $alpha: .8);
+        transform: translateY(10%);
+
+        h1 {
+            @include font-weight(bolder);
+            text-align: center;
+            line-height: 4rem;
+            border-bottom: 1px solid $primaryGrey;
+            border-spacing: 20px;
+
+            @include responsive(xxx-wide-screens) {
+                font-size: 1.8em;
+                padding-bottom: 1.5rem;
+            }
+
+            @include responsive(tablet) {
+                font-size: 1.7rem
+            }
+
+            @include responsive(medium-screens) {
+                @include font-weight(bolder);
+                font-size: 1.8rem;
+                line-height: 2rem;
+                border-spacing: unset;
+                padding-bottom: 2rem;
+                width: 100%;
+            }
+
+            @include responsive(fold-screens) {
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+            }
+        }
+
+        p {
+            @include paddingMargin(.5em 1.2em, .7rem auto 5rem);
+            @include font-weight(medium);
+            // @include transform (translateY, 50%);
+            transform: translateY(50%);
+            width: 55%;
+            line-height: 2em;
+            letter-spacing: .2em;
+
+            @include responsive(xxx-wide-screens) {
+                @include paddingMargin(unset, .5rem auto);
+                width: 70%;
+                transform: translateY(15%);
+                font-size: 1.2em;
+                text-align: center;
+            }
+
+            @include responsive(tablet) {
+                width: 75%;
+            }
+
+            @include responsive(medium-screens) {
+                transform: translateY(20%);
+                width: 100%;
+                width: min(100%);
+                text-align: center;
+            }
+
+            @include responsive(fold-screens) {
+                @include paddingMargin(.2em, .3rem auto 2rem);
+                transform: translateY(0);
+                width: 100%;
+            }
+        }
+
+        .move_down {
+            @include font-weight(bold);
+            color: $primaryWhite;
+            padding: .2em .8em;
+            border-radius: 15px;
+            font-size: 2em;
+            transform: rotate(90deg);
+            @include transform(rotate, 90deg);
+            @include animation(move-down, 2s);
+            animation: move-down 2s ease-in-out infinite;
+        }
+
+        @keyframes move-down {
+            0% {
+                transform: translateY(0) rotate(90deg);
+            }
+
+            50% {
+                transform: translateY(70%) rotate(90deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(90deg);
+            }
+        }
+    }
+}

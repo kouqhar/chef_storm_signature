@@ -1,0 +1,104 @@
+.Header {
+  color: #ffffff;
+}
+.Header .navigation {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: "center";
+  -ms-justify-content: space-between;
+  -ms-align-items: "center";
+  padding: 0.7rem 2rem;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 20px 2px #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+@media only screen and (min-width: 1700px) {
+  .Header .navigation {
+    height: 13vh;
+    width: 100%;
+  }
+}
+.Header .navigation .navLinks {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  -ms-justify-content: space-around;
+  -ms-align-items: center;
+}
+@media only screen and (width: 768px) {
+  .Header .navigation .navLinks {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 761px) {
+  .Header .navigation .navLinks {
+    height: auto;
+    width: auto;
+    display: none;
+  }
+}
+.Header .navigation .navLinks ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  -ms-justify-content: space-around;
+  -ms-align-items: center;
+  height: 100%;
+  width: auto;
+  transform: translateY(50%);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+@media only screen and (min-width: 1700px) {
+  .Header .navigation .navLinks ul {
+    transform: translateY(0);
+    font-size: 2.1rem;
+  }
+}
+.Header .navigation .navLinks ul li {
+  margin-right: 2em;
+  transition: transform 0.2s ease-in-out;
+}
+@media only screen and (width: 768px) {
+  .Header .navigation .navLinks ul li {
+    margin-right: 1em;
+  }
+}
+.Header .navigation .navLinks ul li:last-child {
+  margin-right: 0em;
+}
+.Header .navigation .navLinks ul li:hover {
+  transform: scale(1.15);
+}
+.Header .navigation .navLinks ul li a {
+  font-weight: 500;
+  font-size: 0.9em;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Header .navigation .navLinks ul:last-child {
+  height: auto;
+  width: auto;
+}
+.Header .navigation .navLinks ul:last-child li {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translateY(-30%);
+  padding: 0.1rem 0.3rem;
+  cursor: pointer;
+}
+@media only screen and (max-width: 761px) {
+  .Header .DesktopOnly {
+    display: none;
+  }
+}/*# sourceMappingURL=Toolbar.module.css.map */

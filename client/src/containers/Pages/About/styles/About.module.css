@@ -1,0 +1,27 @@
+.About {
+  height: auto;
+  width: 100%;
+  padding: 2rem 0;
+  margin: 0;
+  background: #191c1d;
+  min-height: 50vh;
+  color: #ffffff;
+}
+.About .content {
+  height: auto;
+  width: 80%;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  text-align: justify;
+}
+.About .content p {
+  line-height: 1.7rem;
+}
+@media only screen and (max-width: 761px) {
+  .About .content {
+    height: auto;
+    width: 90%;
+  }
+}/*# sourceMappingURL=About.module.css.map */

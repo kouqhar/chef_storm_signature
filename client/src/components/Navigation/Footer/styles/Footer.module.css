@@ -1,0 +1,44 @@
+.Footer_Container {
+  display: grid;
+  place-items: center;
+  height: 10vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+@media only screen and (min-width: 1700px) {
+  .Footer_Container {
+    height: auto;
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 2rem;
+  }
+}
+.Footer_Container .content {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.Footer_Container .content p {
+  font-weight: 500;
+  font-size: 0.9em;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+@media only screen and (max-width: 350px) {
+  .Footer_Container .content p {
+    height: auto;
+    width: 90%;
+    text-align: left;
+    font-size: 0.9em;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .Footer_Container .content p {
+    line-height: 3rem;
+  }
+}
+.Footer_Container .content p abbr {
+  color: #68d7e4;
+}/*# sourceMappingURL=Footer.module.css.map */

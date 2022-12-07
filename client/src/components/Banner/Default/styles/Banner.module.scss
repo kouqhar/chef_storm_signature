@@ -1,0 +1,95 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+@import '../../../../styles/partials/mediaQueries';
+@import '../../../../styles/partials/support';
+
+.banner {
+    @include centeredGrid();
+    @include heightWidth(40vh);
+    position: relative;
+    color: invert($primaryWhite);
+
+    background: {
+        image: url("../../../../assets/images/chef/image1.png");
+        color: linear-gradient(90deg, $primaryBlack 40%, $primaryWhite 20%, $primaryGrey 20%, $card-button 20%);
+        repeat: no-repeat;
+        attachment: fixed;
+        size: cover;
+        position: 100% 30%;
+    }
+
+    &_text {
+        @include heightWidth(auto, 60%);
+        @include paddingMargin(1em 2em);
+        display: grid;
+        border-radius: 1em;
+        place-items: center;
+        background: rgba($color: invert($primaryBlack), $alpha: .3);
+        transform: translateY(20%);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        @include responsive(xx-wide-screens) {
+            @include heightWidth(auto, 80%);
+            @include paddingMargin(1em 2em);
+        }
+
+        @include responsive(tablet) {
+            @include heightWidth(auto, 80%);
+            @include paddingMargin(3em, 0 auto);
+        }
+
+        @include responsive(medium-screens) {
+            @include heightWidth(auto, 80%);
+            @include paddingMargin(2em, 0 auto);
+        }
+
+        @include responsive(fold-screens) {
+            @include heightWidth(auto, 90%);
+            @include paddingMargin(2em 1em, 0 auto);
+        }
+
+        h1 {
+            // @include font-weight(extreme);
+            @include paddingMargin(0 0 2rem, 0 auto);
+            @include font-weight(bolder);
+            text-align: center;
+            line-height: 4rem;
+            letter-spacing: .2em;
+            border-bottom: 20px solid rgba($color: invert($primaryGrey), $alpha: 1);
+
+            @include responsive(xx-wide-screens) {
+                font-size: 6rem;
+                line-height: 7rem;
+                border-spacing: unset;
+                padding-bottom: unset;
+            }
+
+            @include responsive(tablet) {
+                font-size: 5rem;
+                line-height: 5rem;
+                border-spacing: unset;
+                padding-bottom: 2rem;
+            }
+
+            @include responsive(medium-screens) {
+                font-size: 3rem;
+                line-height: 3rem;
+                border-spacing: unset;
+                padding-bottom: .7rem;
+            }
+
+            @include responsive(fold-screens) {
+                font-size: 2.5rem;
+                line-height: 3rem;
+                border-spacing: unset;
+                padding-bottom: .7rem;
+            }
+        }
+    }
+
+    @include responsive(xxx-wide-screens) {
+        @include heightWidth(50vh);
+        font-size: 1.5rem;
+        background-position: 100% 100%;
+    }
+}

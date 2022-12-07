@@ -1,0 +1,35 @@
+@mixin transform($property, $value) { 
+    transform: #{$property}(#{$value});  
+    -o-transform: $property($value);
+    -moz-transform: $property($value);
+    -webkit-transform: $property($value);
+    -ms-zoom-transform: $property($value);
+    -ms-transform: $property($value);
+}
+
+@mixin transformXY($property, $valueX, $valueY) { 
+    transform: $property($valueX, $valueY);  
+    -o-transform: $property($valueX, $valueY);
+    -moz-transform: $property($valueX, $valueY);
+    -webkit-transform: $property($valueX, $valueY);
+    -ms-zoom-transform: $property($valueX, $valueY);
+    -ms-transform: $property($valueX, $valueY);
+}
+
+@mixin animation($name, $duration : .5s, $count: 'infinite', $timing: 'ease-in-out') {
+    animation: $name $duration $count $timing;
+    -o-animation: $name $duration $count $timing;
+    -moz-animation: $name $duration $count $timing;
+    -webkit-animation: $name $duration $count $timing;
+    -ms-zoom-animation: $name $duration $count $timing;
+    -ms-animation: $name $duration $count $timing;
+}
+
+@mixin transition($property : 'all', $duration : .5s, $timing: 'ease-in-out') {
+    transition: $property $duration $timing;
+    -o-transition: $property $duration $timing;
+    -moz-transition: $property $duration $timing;
+    -webkit-transition: $property $duration $timing;
+    -ms-zoom-transition: $property $duration $timing;
+    -ms-transition: $property $duration $timing;
+}

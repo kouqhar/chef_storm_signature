@@ -1,0 +1,104 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+@import '../../../../styles/partials/mediaQueries';
+@import '../../../../styles/partials/support';
+
+.filter_buttons {
+    @include heightWidth(auto, 100%);
+    @include paddingMargin(.4rem 0);
+    @include centeredGrid();
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: $primaryBlack;
+    box-shadow: 0px 1px 5px 2px $primaryAsh;
+    color: $primaryWhite;
+
+    @include responsive(medium-screens) {
+        top: 5%;
+    }
+
+    .content {
+        @include heightWidth(auto, 90%);
+        @include paddingMargin(.7rem .3rem, 0 auto);
+        @include displayFlex(flex-start, center);
+        overflow-x: hidden;
+
+        @include responsive(medium-screens) {
+            padding: .3rem unset;
+        }
+
+        h3 {
+            padding-right: 5rem;
+            width: 20%;
+
+            @include responsive(medium-screens) {
+                font-size: 1.1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        .options {
+            @include heightWidth(auto, 100%);
+            @include displayFlex(space-between, center);
+            @include paddingMargin(.5rem .7rem);
+            overflow-x: auto;
+
+            label {
+                @include heightWidth(100%, fit-content);
+                @include paddingMargin(.6rem 1.2rem);
+                @include displayFlex(space-around, center);
+                border-radius: 15px;
+                font-size: 1.3rem;
+                font-weight: bold;
+                background: $primaryAsh;
+                color: $primaryWhite;
+                margin-right: 2rem;
+
+                input {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.Gallery {
+    @include heightWidth(auto);
+    @include paddingMargin(2rem 0, 0 auto);
+    @include centeredGrid();
+    position: relative;
+    min-height: 50vh;
+    background: $secondaryBlur;
+
+    // background: $primaryWhite;
+    .Container {
+        @include heightWidth(auto, 90%);
+        @include paddingMargin(2rem 0, 0 auto 2%);
+        margin-inline: auto;
+        min-height: 70vh;
+        overflow-y: auto;
+
+        @include responsive(medium-screens) {
+            @include paddingMargin(unset, unset);
+        }
+
+        .images {
+            @include heightWidth();
+            @include paddingMargin(0, 0);
+            @include displayGrid(auto, repeat(auto-fit, minmax(370px, 1fr)));
+            place-items: center;
+            gap: 1.5rem .5rem;
+
+            @include responsive(medium-screens) {
+                display: grid;
+                grid-template-rows: repeat(auto-fit, 1fr);
+            }
+
+            // img{
+            //     @include heightWidth();
+            // }
+        }
+    }
+}

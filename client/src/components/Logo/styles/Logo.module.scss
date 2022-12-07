@@ -1,0 +1,14 @@
+@import '../../../styles/partials/mixin';
+@import '../../../styles/partials/colors';
+@import '../../../styles/partials/mediaQueries';
+
+.officialLogo{
+    @include font-weight(bolder);
+    color: $primaryWhite;
+    margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: .7rem;
+    @include responsive(xxx-wide-screens){
+        font-size: 3rem;
+    }
+}

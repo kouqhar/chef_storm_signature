@@ -1,0 +1,56 @@
+.Location {
+  height: 80vh;
+  width: 100%;
+  padding: 2rem 0.1rem;
+  margin: 0;
+  background: #191c1d;
+  color: #ffffff;
+}
+.Location .content {
+  height: 100%;
+  width: 90%;
+  padding: 0.2rem 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+}
+@media only screen and (max-width: 761px) {
+  .Location .content {
+    height: 100%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+.Location .content .googleMaps {
+  height: auto;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-radius: 0.4rem;
+  transform: translateY(-5%);
+  background-image: url("../../../../assets/images/katie-smith-uQs1802D0CQ-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 761px) {
+  .Location .content .googleMaps {
+    transform: translateY(0);
+    border-radius: 1rem 1rem 0 0;
+  }
+}
+.Location .content .locationText {
+  height: auto;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  transform: translateY(5%);
+  background: #252729;
+}
+@media only screen and (max-width: 761px) {
+  .Location .content .locationText {
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=Location.module.css.map */

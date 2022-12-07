@@ -1,0 +1,206 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+@import '../../../../styles/partials/mediaQueries';
+@import '../../../../styles/partials/support';
+
+.Main_Container {
+    @include heightWidth(90vh);
+    padding: 2rem 0;
+    background: $primaryBlack;
+    color: $primaryWhite;
+    border-top: 5px solid $primaryGrey;
+    // background: $primaryWhite;
+    // color: $primaryBlack;
+    overflow-y: auto;
+
+    @include responsive(xxx-wide-screens) {
+        font-size: 2rem;
+    }
+
+    @include responsive(medium-screens) {
+        @include heightWidth(100vh);
+    }
+
+    %card-flex-default {
+        @include displayFlex();
+        @include heightWidth();
+    }
+
+    .menu_card {
+        @include heightWidth(auto);
+        @include paddingMargin(0, 1rem auto 3rem);
+        @include displayGrid(1fr, 2fr 5fr);
+        place-items: center;
+        min-height: 20rem;
+
+        @include responsive(tablet) {
+            @include displayGrid(1fr, 3fr 5fr);
+        }
+
+        @include responsive(medium-screens) {
+            @include displayGrid(1fr 1fr, 1fr);
+            @include paddingMargin(0, .5rem auto 1rem);
+        }
+
+        .menu_detail {
+            @extend %card-flex-default;
+            @include heightWidth(70%, 70%);
+            padding-right: 1.5rem;
+            text-align: right;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-right: 7px solid invert($color: $primaryBlack);
+
+            // border-right: 7px solid invert($color: $primaryWhite);
+            @include responsive(xx-wide-screens) {
+                @include heightWidth(80%, 90%);
+            }
+
+            @include responsive(xxx-wide-screens) {
+                @include heightWidth(80%, 80%);
+            }
+
+            @include responsive(wide-screens) {
+                @include heightWidth(70%, 90%);
+            }
+
+            @include responsive(medium-screens) {
+                font-size: 1.05em;
+            }
+
+            @include responsive(fold-screens) {
+                @include heightWidth(100%, 90%);
+                padding-right: unset;
+                padding-top: 1rem;
+                border-right: unset;
+                text-align: center;
+                align-items: center;
+                border-top: 4px solid invert($color: $primaryBlack);
+            }
+
+            &_default_button {
+                text-align: center;
+                color: $primaryWhite;
+                font-weight: bold;
+                background: $card-button;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            &__heading {
+                @include responsive(fold-screens) {
+                    @include heightWidth(auto);
+                    font-size: 1.3em;
+                }
+            }
+
+            &__info {
+                @include font-weight(semi-medium);
+                line-height: 1.4em;
+                letter-spacing: .1em;
+            }
+
+            &__button {
+                @extend .menu_detail_default_button;
+                @include paddingMargin(.5em 1em, 0);
+                @include heightWidth(auto, 60%);
+
+                @include responsive(fold-screens) {
+                    @include heightWidth(auto, 90%);
+                }
+            }
+        }
+
+        .menu_cards {
+            @extend %card-flex-default;
+            @include paddingMargin(1rem);
+            @include heightWidth(auto, 100%);
+            overflow-x: auto;
+
+            @include responsive(fold-screens) {
+                @include paddingMargin(1rem .2rem, .9rem auto);
+            }
+
+            &__card {
+                @include paddingMargin(1rem);
+                min-width: fit-content;
+                margin-right: 1.6rem;
+                background: rgba($color: $primaryAsh, $alpha: .3);
+                border-radius: 15px;
+                text-align: center;
+                cursor: pointer;
+                transition: box-shadow .5s ease-in-out;
+
+                @include responsive(medium-screens) {
+                    @include paddingMargin(.7rem .4rem);
+                    font-size: 1.1em;
+                    font-weight: bold;
+                    margin-right: .8rem;
+                }
+
+                @include responsive(fold-screens) {
+                    @include paddingMargin(.2rem .6rem, .4rem auto);
+                    font-size: .9em;
+                    margin-right: unset;
+                }
+
+                p {
+                    text-transform: uppercase;
+                }
+
+                img {
+                    @include heightWidth(200px, 300px);
+                    border-radius: 15px;
+                    transition: transform .5s ease-in-out;
+
+                    @include responsive(xxx-wide-screens) {
+                        @include heightWidth(350px, 400px);
+                    }
+
+                    @include responsive(fold-screens) {
+                        @include heightWidth(150px, 200px);
+                    }
+                }
+
+                &:hover {
+                    box-shadow: 1px 1px 8px 5px $card-button;
+
+                    @include responsive(fold-screens) {
+                        transform: scale(1.1);
+                    }
+
+                    &>img {
+                        transform: scale(1.25);
+                        cursor: pointer;
+
+                        @include responsive(fold-screens) {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
+                &___name {
+                    line-height: 2.5em;
+
+                    @include responsive(fold-screens) {
+                        font-size: 1em;
+                    }
+                }
+
+                &___price {
+                    @include heightWidth(auto, auto);
+
+                    .order_button {
+                        @extend .menu_detail_default_button;
+                        @include paddingMargin(.5em 2em, .8em .5em);
+                        border: none;
+                        outline: none;
+                        font-size: .95em;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

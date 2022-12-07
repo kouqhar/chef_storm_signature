@@ -1,0 +1,51 @@
+@import '../../../../../styles/partials/colors';
+@import '../../../../../styles/partials/mixin';
+@import '../../../../../styles/partials/support';
+@import '../../../../../styles/partials/mediaQueries';
+
+.DrawerContainer{
+    @include heightWidth(auto, 150%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translate(100%, 0);
+    background: $primaryBlack;
+    .DrawerToggle {
+        @include displayFlex(space-around);
+        @include heightWidth(auto, 20%);
+        transform: translateX(10%);
+        flex-flow: column;
+        padding: 10px 5px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+        div {
+            width: 70%;
+            height: 6px;
+            margin: 3% 0;
+            border-radius: 15px;
+            background: $primaryWhite;
+            outline: none;
+            transition: all .6s ease-in-out;
+            &:nth-child(2){
+                width: 60%;
+            }
+            &:last-child{
+                width: 50%;
+            }
+        }
+        @include responsive(default){display: none;}
+        }
+}
+.divClicked > div{
+    transform: rotate(-45deg) translate(-20%, 90%) scale(1.2);
+    background: $card-button !important;
+    &:nth-child(2){
+        opacity: 0;
+    }
+    &:last-child{
+        transform: rotate(50deg) translate(-30%, 50%) scale(1.2);
+        background: $card-button;
+        width: 90%;
+    }
+}

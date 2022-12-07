@@ -1,0 +1,50 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+@import '../../../../styles/partials/mediaQueries';
+
+.Location {
+    @include heightWidth(80vh);
+    @include paddingMargin(2rem .1rem);
+    background: $secondaryBlur;
+    color: $primaryWhite;
+
+    .content {
+        @include heightWidth(100%, 90%);
+        @include paddingMargin(.2rem 0, 0 auto);
+        @include displayGrid(1fr, 3fr 1fr);
+
+        @include responsive(medium-screens) {
+            @include heightWidth(100%, 90%);
+            @include displayGrid(1fr 1fr, 1fr);
+        }
+
+        .googleMaps {
+            @include heightWidth(auto);
+            @include paddingMargin();
+            border-radius: .4rem;
+            transform: translateY(-5%);
+
+            background: {
+                image: url('../../../../assets/images/katie-smith-uQs1802D0CQ-unsplash.jpg');
+                size: cover;
+                repeat: no-repeat;
+            }
+
+            @include responsive(medium-screens) {
+                transform: translateY(0);
+                border-radius: 1rem 1rem 0 0;
+            }
+        }
+
+        .locationText {
+            @include heightWidth(auto);
+            @include centeredGrid();
+            transform: translateY(5%);
+            background: $primaryBlur;
+
+            @include responsive(medium-screens) {
+                transform: translateY(0);
+            }
+        }
+    }
+}

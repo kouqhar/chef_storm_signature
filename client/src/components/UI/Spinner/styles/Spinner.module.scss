@@ -1,0 +1,54 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+@import '../../../../styles/partials/support';
+@import '../../../../styles/partials/keyframes';
+
+%borderRadius{
+        border-radius: 50%;
+}
+
+.Loader{
+    @extend %borderRadius;
+    @include heightWidth(10em, 10em);
+    color: $loaderColor;
+    font-size: .8rem;
+    text-indent: -99999em;
+    margin: 55px auto;
+    position: relative;
+    box-shadow: inset 0 0 0 1em;
+    @include transform(translateZ, 0);
+    &::before, &::after{
+        @extend %borderRadius;
+        content: '';
+        position: absolute;
+    }
+    &::before{
+        @include heightWidth(10.2em, 5.2em);
+        background: $primaryWhite;
+        border-radius: 10.2em 0 0 10.2em;
+        top: -.1em;
+        left: -.1em;
+        -webkit-transform-origin: 5.2em 5.1em;
+        transform-origin: 5.2em 5.1em;
+        @include animation(load2, 2s, infinite, ease);
+    }
+
+    &::after{
+        @include heightWidth(10.2em, 5.2em);
+        background: $primaryWhite;
+        border-radius: 0 10.2em 10.2em 0;
+        top: -.1em;
+        left: 5.1em;
+        -webkit-transform-origin: 0px 5.1em;
+        transform-origin: 0px 5.1em;
+        @include animation(load2, 2s, infinite, ease);
+    }
+    @include keyframes(load2){
+        0%{
+            @include transform(rotate, 0deg);
+        }
+        100%{
+            @include transform(rotate, 360deg);
+        }
+    }
+}

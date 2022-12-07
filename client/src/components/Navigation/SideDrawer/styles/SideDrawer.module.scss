@@ -1,0 +1,89 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/mixin';
+@import '../../../../styles/partials/mediaQueries';
+@import '../../../../styles/partials/support';
+
+.SideDrawer{
+    background: $primaryBlack;
+    color: $primaryWhite;
+    padding: 32px 0;
+    position: fixed;
+    width: 70%;
+    max-width: 90%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 500;
+    box-sizing: border-box;
+    transition: transform .7s ease-in-out;
+    @include responsive(default){
+        display: none;
+    }
+    .navigation{
+        @include heightWidth(auto);
+        display: unset;
+        .navLinks{
+            @include heightWidth(auto, 100%);
+            @include displayFlex(space-between);
+            flex-direction: column;
+            transform: translateY(15%);
+            overflow-y: auto;
+            @include responsive(fold-screens){
+                font-size: 1.1em;
+            }
+            ul{
+                @include heightWidth(auto);
+                margin: 0 auto;
+                li{
+                    text-align: center;
+                    padding: 1.8rem 0 .6rem;
+                    border-bottom: 2px solid $primaryGrey;
+                    a{
+                        @include font-weight(bold);
+                        color: $primaryWhite; 
+                        font-size: .95em;
+                        letter-spacing: .15em;
+                        @include responsive(fold-screens){
+                            font-size: .6em;
+                        }
+                    }
+                }
+            &:last-child{
+                @include heightWidth(auto);
+                @include displayFlex(space-around);
+                @include paddingMargin(1rem .5rem, 1.5rem auto);
+                flex-direction: row;
+                li{
+                    @include heightWidth(50px, 50px);
+                    @include centeredGrid();
+                    line-height: unset;
+                    text-indent: unset;
+                    padding: unset;
+                    border-radius: 50%;
+                    background: $primaryWhite;
+                    color: $primaryBlack;
+                }
+            }
+            }
+        }
+    }
+}
+
+.Logo{
+    @include heightWidth(auto);
+    @include displayFlex();
+    @include paddingMargin(.8rem 0, 0 auto 2rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $card-button;
+}
+
+.Open{
+    transform: translateX(0);
+    border-right: 2px solid rgba($color: $primaryWhite, $alpha: .3);
+}
+
+.Close{
+    transform: translateX(-100%);
+}

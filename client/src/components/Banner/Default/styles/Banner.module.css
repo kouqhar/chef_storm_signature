@@ -1,0 +1,108 @@
+.banner {
+  display: grid;
+  place-items: center;
+  height: 40vh;
+  width: 100%;
+  position: relative;
+  color: black;
+  background-image: url("../../../../assets/images/chef/image1.png");
+  background-color: linear-gradient(90deg, #000000 40%, #ffffff 20%, #eee 20%, #97281B 20%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 100% 30%;
+}
+.banner_text {
+  height: auto;
+  width: 60%;
+  padding: 1em 2em;
+  margin: 0;
+  display: grid;
+  border-radius: 1em;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(20%);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+@media only screen and (min-width: 1201px) {
+  .banner_text {
+    height: auto;
+    width: 80%;
+    padding: 1em 2em;
+    margin: 0;
+  }
+}
+@media only screen and (width: 768px) {
+  .banner_text {
+    height: auto;
+    width: 80%;
+    padding: 3em;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 761px) {
+  .banner_text {
+    height: auto;
+    width: 80%;
+    padding: 2em;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .banner_text {
+    height: auto;
+    width: 90%;
+    padding: 2em 1em;
+    margin: 0 auto;
+  }
+}
+.banner_text h1 {
+  padding: 0 0 2rem;
+  margin: 0 auto;
+  font-weight: bolder;
+  font-size: xx-large;
+  text-align: center;
+  line-height: 4rem;
+  letter-spacing: 0.2em;
+  border-bottom: 20px solid #111111;
+}
+@media only screen and (min-width: 1201px) {
+  .banner_text h1 {
+    font-size: 6rem;
+    line-height: 7rem;
+    border-spacing: unset;
+    padding-bottom: unset;
+  }
+}
+@media only screen and (width: 768px) {
+  .banner_text h1 {
+    font-size: 5rem;
+    line-height: 5rem;
+    border-spacing: unset;
+    padding-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 761px) {
+  .banner_text h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+    border-spacing: unset;
+    padding-bottom: 0.7rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .banner_text h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    border-spacing: unset;
+    padding-bottom: 0.7rem;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .banner {
+    height: 50vh;
+    width: 100%;
+    font-size: 1.5rem;
+    background-position: 100% 100%;
+  }
+}/*# sourceMappingURL=Banner.module.css.map */

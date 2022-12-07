@@ -1,0 +1,34 @@
+@import '../../../../styles/partials/colors';
+@import '../../../../styles/partials/support';
+@import '../../../../styles/partials/mediaQueries';
+@import '../../../../styles/partials/mixin';
+
+.Modal {
+    @include heightWidth(80%, 80%);
+    position: fixed;
+    z-index: 200;
+    border-radius: 1rem;
+    left: 10%;
+    top: 10%;
+    transition: all .3s ease-in;
+    background: $primaryBlur;
+
+    @include responsive(medium-screens) {
+        @include heightWidth();
+        left: 0;
+        top: 0;
+        z-index: 30000;
+    }
+
+    &__show {
+        transform: translateY(0);
+        z-Index: 500;
+        opacity: 1;
+    }
+
+    &__remove {
+        transform: translateY(100%);
+        z-Index: -1;
+        opacity: 0;
+    }
+}

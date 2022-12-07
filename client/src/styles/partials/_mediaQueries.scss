@@ -1,0 +1,56 @@
+$width-fold: 350px;
+$width-small: 400px;
+$width-minimum: 600px;
+$width-medium: 761px;
+$min-medium-width: 761px;
+$width-large: 1200px;
+$width-tab: 768px;
+$height-tab: 768px;
+
+@mixin responsive($width) {
+    @if $width == wide-screens{
+        @media only screen and (max-width: $width-large) {
+            @content;
+        }
+    }
+    @else if $width == medium-screens{
+        @media only screen and (max-width: $width-medium) {
+            @content;
+        }
+    }
+    @else if $width == small-screens{
+        @media only screen and (max-width: $width-small) {
+            @content;
+        }
+    }
+    @else if $width == fold-screens{
+        @media only screen and (max-width: $width-fold) {
+            @content;
+        }
+    }
+    @else if $width == min-medium{
+        @media only screen and (min-width: $min-medium-width) {
+            @content;
+        }
+    }
+    @else if $width == xx-wide-screens{
+        @media only screen and (min-width: $width-large + 1) {
+            @content;
+        }
+    }
+    @else if $width == xxx-wide-screens{
+        @media only screen and (min-width: $width-large + 500) {
+            @content;
+        }
+    }
+    @else if $width == tablet{
+        @media only screen and (width: $width-tab) {
+            @content;
+        }
+    }
+    @else if $width == default{
+        @media only screen and (min-width: $width-medium) {
+            @content;
+        }
+    }
+}

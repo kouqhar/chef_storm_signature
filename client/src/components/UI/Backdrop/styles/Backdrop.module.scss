@@ -1,0 +1,13 @@
+@import '../../../../styles/partials/mediaQueries';
+@import '../../../../styles/partials/mixin';
+
+.Backdrop {
+    @include heightWidth();
+    @include centeredGrid();
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .7);
+    cursor: pointer;
+}
